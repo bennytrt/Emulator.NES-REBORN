@@ -56,7 +56,7 @@ The APU is currently not implemented, which means no games output audio.
 Emulator.NES uses C# 7 language features, so requires a compiler that supports them.
 
 ### Windows
-Visual Studio 2017 is sufficient to compile.
+Visual Studio 2022 is sufficient to compile.
 
 ### Linux
 `msbuild` from Mono should be used to build, but the version included in most distro repositories is not
