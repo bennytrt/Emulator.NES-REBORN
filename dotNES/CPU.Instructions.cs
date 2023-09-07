@@ -104,9 +104,9 @@ namespace dotNES
         [OpcodeDef(Opcode = 0x6C, Cycles = 5)]
         private void JMP()
         {
-            if (_currentInstruction == 0x4C)
+            if (_currentOpcode == 0x4C)
                 PC = NextWord();
-            else if (_currentInstruction == 0x6C)
+            else if (_currentOpcode == 0x6C)
             {
                 uint off = NextWord();
                 // AN INDIRECT JUMP MUST NEVER USE A VECTOR BEGINNING ON THE LAST BYTE OF A PAGE

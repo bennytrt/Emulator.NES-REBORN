@@ -50,18 +50,18 @@ namespace dotNES
                 }
             }
 
-            _currentInstruction = NextByte();
+            _currentOpcode = NextByte();
 
-            Cycle += _opcodeDefs[_currentInstruction].Cycles;
+            Cycle += _opcodeDefs[_currentOpcode].Cycles;
 
             ResetInstructionAddressingMode();
             // if (_numExecuted > 10000 && PC - 1 == 0xFF61)
             //  if(_emulator.Controller.debug || 0x6E00 <= PC && PC <= 0x6EEF)
             //      Console.WriteLine($"{(PC - 1).ToString("X4")}  {_currentInstruction.ToString("X2")}	{opcodeNames[_currentInstruction]}\t\t\tA:{A.ToString("X2")} X:{X.ToString("X2")} Y:{Y.ToString("X2")} P:{P.ToString("X2")} SP:{SP.ToString("X2")}");
 
-            Opcode op = _opcodes[_currentInstruction];
+            Opcode op = _opcodes[_currentOpcode];
             if (op == null)
-                throw new ArgumentException(_currentInstruction.ToString("X2"));
+                throw new ArgumentException(_currentOpcode.ToString("X2"));
             op();
         }
 

@@ -8,7 +8,7 @@ namespace dotNES
     {
         private readonly byte[] _ram = new byte[0x800];
         public int Cycle;
-        private uint _currentInstruction;
+        private uint _currentOpcode;
 
         public delegate void Opcode();
 
@@ -46,22 +46,30 @@ namespace dotNES
             }
         }
 
-        public void Execute()
+        private void ProcessStringFromMemory(ushort address)
         {
-            for (int i = 0; i < 5000; i++)
-            {
-                ExecuteSingleInstruction();
-            }
-
-
             uint w;
-            ushort x = 6000;
             string z = "";
-            while ((w = ReadByte(x)) != '\0')
+
+            while ((w = ReadByte(address)) != '\0')
             {
                 z += (char)w;
             }
 
+            // Do something with 'z' if needed.
+        }
+
+
+        public void Execute()
+        {
+            const int maxInstructions = 5000;
+
+            for (int i = 0; i < maxInstructions; i++)
+            {
+                ExecuteSingleInstruction();
+            }
+
+            ProcessStringFromMemory(6000);
             Console.WriteLine(">>> " + ReadByte(0x02));
         }
     }

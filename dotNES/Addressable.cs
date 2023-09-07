@@ -46,14 +46,28 @@ namespace dotNES
 
         public void MapReadHandler(uint start, uint end, CPU.ReadDelegate func)
         {
+            if (start > _addressSize || end > _addressSize)
+            {
+                throw new ArgumentException("Invalid address range.");
+            }
+
             for (uint i = start; i <= end; i++)
+            {
                 _readMap[i] = func;
+            }
         }
 
         public void MapWriteHandler(uint start, uint end, CPU.WriteDelegate func)
         {
+            if (start > _addressSize || end > _addressSize)
+            {
+                throw new ArgumentException("Invalid address range.");
+            }
+
             for (uint i = start; i <= end; i++)
+            {
                 _writeMap[i] = func;
+            }
         }
     }
 }
