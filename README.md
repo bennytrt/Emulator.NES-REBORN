@@ -24,6 +24,8 @@ Controls are currently hardcoded.
 * Arrow Keys &mdash; Up/Down/Left/Right
 * Enter &mdash; Start
 * Right Shift &mdash; Select
+* Tab &mdash; Restart Application (For Example If A ROM doesn't Load Correctly, Gets Stuck, Or Doesn't Load At All But Does Get Seen As Working Rom By Emulator)
+* Escape &mdash; Exit Application
 
 ## Compatibility
 For a list of games known to be playable, visit [the wiki page](https://github.com/Xyene/Emulator.NES/wiki/Games-Known-to-Work).
