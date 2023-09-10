@@ -1,6 +1,7 @@
 # Emulator.NES [![Linux Build Status](https://travis-ci.org/Xyene/Emulator.NES.svg?branch=master)](https://travis-ci.org/Xyene/Emulator.NES) [![Windows Build Status](https://ci.appveyor.com/api/projects/status/gup13j6tw463siny?svg=true)](https://ci.appveyor.com/project/Xyene/emulator-nes)
 
  A C# emulator for Nintendo Entertainment System (NES) hardware.
+ Emulator.NES is undergoing an complete Rewrite! 
 
 ![](http://i.imgur.com/aef0cM9.png) <!-- Donkey Kong -->
 ![](http://i.imgur.com/OjrvRmz.png) <!-- Super Mario Bros -->
@@ -56,7 +57,7 @@ The APU is currently not implemented, which means no games output audio.
 Emulator.NES uses C# 7 language features, so requires a compiler that supports them.
 
 ### Windows
-Visual Studio 2017 is sufficient to compile.
+Visual Studio 2022 is sufficient to compile.
 
 ### Linux
 `msbuild` from Mono should be used to build, but the version included in most distro repositories is not
